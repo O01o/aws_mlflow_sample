@@ -1,0 +1,1 @@
+aws ec2-instance-connect open-tunnel --instance-id EC2_INSTANCE_ID --remote-port 22 --local-port 2222
