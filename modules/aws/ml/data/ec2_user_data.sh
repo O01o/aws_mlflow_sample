@@ -17,4 +17,5 @@ rye sync
 git clone https://github.com/O01o/pytorch_mlflow_sample.git
 cd pytorch_mlflow_sample/
 rye sync
-rye run python train.py 
+rye run python image_exstractor.py
+rye run python train.py x.x.x.x 5000
