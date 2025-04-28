@@ -1,0 +1,14 @@
+{
+    "Comment": "Stop EC2 instance via Step Functions",
+    "StartAt": "StopEC2",
+    "States": {
+      "StopEC2": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::aws-sdk:ec2:stopInstances",
+        "Parameters": {
+          "InstanceIds": ["${aws_instance.batch_instance.id}"]
+        },
+        "End": true
+      }
+    }
+  }

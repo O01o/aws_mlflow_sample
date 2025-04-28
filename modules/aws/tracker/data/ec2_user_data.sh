@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# Install packages
+# Install Rye and MLflow
 curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
 source "/home/ec2-user/.rye/env"
 rye init

@@ -46,3 +46,10 @@ module "tracker" {
   key_pair_name = var.key_pair_name
   depends_on = [ module.common ]
 }
+
+/*
+module "observer" {
+  source = "./observer"
+  ec2_instance_id = ""
+}
+*/

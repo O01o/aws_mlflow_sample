@@ -17,15 +17,9 @@ resource "aws_iam_instance_profile" "ml_sample_instance_profile" {
   role = aws_iam_role.ml_sample_ec2_role.name
 }
 
-/*
-resource "aws_key_pair" "key_pair" {
-  
-}
-*/
-
 resource "aws_instance" "ml_sample" {
   ami           = "ami-039dceec5b6e8d729" # # Deep Learning OSS Nvidia Driver AMI GPU PyTorch 2.5 (Amazon Linux 2023)
-  instance_type = "g4dn.xlarge"
+  instance_type = "g4ad.xlarge"
   subnet_id     = var.subnet_id
   # key_name      = aws_key_pair.key_pair.key_name
 
@@ -36,6 +30,6 @@ resource "aws_instance" "ml_sample" {
   })
 
   tags = {
-    Name = "MLSampleInstance"
+    Name = "MLInstance"
   }
 }

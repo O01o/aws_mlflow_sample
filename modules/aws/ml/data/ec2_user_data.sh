@@ -1,15 +1,23 @@
 #!/bin/bash
 set -e
 
+# Install CloudWatch Agent
+sudo yum install -y amazon-cloudwatch-agent
+
+# Place /opt/aws/amazon-cloudwatch-agent/bin/config.json
+
+# Execute CloudWatch Agent
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+  -a fetch-config \
+  -m ec2 \
+  -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json \
+  -s
+
 # Install Git
 sudo yum update -y
 sudo yum install -y git
 
-# Install New Relic
-curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash
-sudo NEW_RELIC_API_KEY="<your API key" NEW_RELIC_ACCOUNT_ID="<your account ID>" /usr/local/bin/newrelic install -y infrastructure-agent
-
-# Install Rye
+# Install Rye and MLflow
 curl -sSfL https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
 source "/root/.rye/env"
 rye init

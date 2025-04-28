@@ -15,7 +15,10 @@
     },
     {
       "Effect"  : "Allow",
-      "Action"  : "ec2:TerminateInstances",
+      "Action"  : [
+        "ec2:StopInstances",
+        "ec2:TerminateInstances"
+      ],
       "Resource": "*"
     }
   ]
