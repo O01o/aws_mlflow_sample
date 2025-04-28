@@ -14,14 +14,6 @@ variable "subnet_id" {
   type = string
 }
 
-variable "bucket_id" {
-  type = string
-}
-
-variable "bucket_arn" {
-  type = string
-}
-
 variable "key_pair_name" {
   type = string
 }

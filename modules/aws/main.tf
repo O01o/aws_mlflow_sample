@@ -34,8 +34,7 @@ module "ml" {
   region = local.region
   vpc_id = module.common.vpc_id
   subnet_id = module.common.vpc_subnet_id_second
-  bucket_id = module.common.bucket_id
-  bucket_arn = module.common.bucket_arn
+  depends_on = [ module.common ]
 }
 
 module "tracker" {
@@ -44,7 +43,6 @@ module "tracker" {
   region = local.region
   vpc_id = module.common.vpc_id
   subnet_id = module.common.vpc_subnet_id_second
-  bucket_id = module.common.bucket_id
-  bucket_arn = module.common.bucket_arn
   key_pair_name = var.key_pair_name
+  depends_on = [ module.common ]
 }

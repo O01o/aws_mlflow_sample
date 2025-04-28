@@ -9,7 +9,7 @@
         "s3:ListBucket"
       ],
       "Resource": [
-        "${bucket_arn}"
+        "*"
       ]
     },
     {

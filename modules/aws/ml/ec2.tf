@@ -9,9 +9,7 @@ resource "aws_iam_role" "ml_sample_ec2_role" {
 resource "aws_iam_role_policy" "ml_sample_ec2_policy" {
   name   = "MLSampleEC2Policy"
   role   = aws_iam_role.ml_sample_ec2_role.id
-  policy = templatefile("${path.module}/data/ec2_iam_ml_policy.json", {
-    bucket_arn = var.bucket_arn
-  })
+  policy = templatefile("${path.module}/data/ec2_iam_ml_policy.json", {})
 }
 
 resource "aws_iam_instance_profile" "ml_sample_instance_profile" {

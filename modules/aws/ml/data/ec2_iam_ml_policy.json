@@ -10,7 +10,7 @@
         "s3:ListAllMyBuckets"
       ],
       "Resource": [
-        "${bucket_arn}"
+        "*"
       ]
     },
     {

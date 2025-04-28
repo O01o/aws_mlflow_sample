@@ -9,9 +9,7 @@ resource "aws_iam_role" "mlflow_tracker_ec2_role" {
 resource "aws_iam_role_policy" "mlflow_tracker_ec2_policy" {
   name   = "MLWorkflowEC2Policy"
   role   = aws_iam_role.mlflow_tracker_ec2_role.id
-  policy = templatefile("${path.module}/data/ec2_iam_ml_policy.json", {
-    bucket_arn = var.bucket_arn
-  })
+  policy = templatefile("${path.module}/data/ec2_iam_ml_policy.json", {})
 }
 
 resource "aws_iam_instance_profile" "mlflow_tracker_instance_profile" {
